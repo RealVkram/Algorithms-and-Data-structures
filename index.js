@@ -61,6 +61,28 @@ const mergeSort = ( nums ) => {
     }
     
     return [...result, ...left, ...right]
-    
+
   }
   //mergeSort(arr)
+
+  //MEDIAN NUMBER SORT ALGORITHM
+
+  const medianMerge = (arr1, arr2) => {
+  
+    const mergedArray = [...arr1, ...arr2]
+    const sortedArray = mergedArray.sort((a, b) => a- b)
+    
+    let length = sortedArray.length
+    let middle = length / 2
+    let medianNumber;
+    
+    if(length % 2 === 0) {
+      medianNumber = ( sortedArray[middle - 1] + sortedArray[middle] ) / 2
+      return medianNumber
+    }
+    
+    if(length % 2 !== 0) {
+      medianNumber = sortedArray[Math.floor(middle)]
+      return medianNumber
+    }
+  }
