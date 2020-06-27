@@ -1,6 +1,6 @@
 //INSERT SORT ALGORITHM
 
-let arr = [10, 5, 3, 8, 2, 3.5, 6, 3,  4, 7, 9, 1]
+let arr = [10, 5, 3, 8, 2, 3.5, 6, 3,  4, 7, 9, 1, 200]
 
 function insertSort( nums ) {
     let len = nums.length
@@ -31,3 +31,36 @@ function insertSort( nums ) {
       
     } while (swapped) return num
   }
+
+  //MERGE SORT ALGORITHM
+  
+const mergeSort = ( nums ) => {
+    if (nums.length === 1) return nums;
+    
+    const length = nums.length
+    const middle = Math.floor( length / 2 )
+    const left = nums.slice(0, middle)
+    const right = nums.slice(middle, length)
+    
+    const sortedLeft = mergeSort(left)
+    const sortedRight = mergeSort(right)
+    
+    return stitch(sortedLeft, sortedRight)
+  }
+  
+  const stitch = (left, right) => {
+    const result = []
+    
+    while(left.length && right.length) {
+      if (left[0] <= right[0]) {
+        result.push(left.shift())
+      }
+      else {
+        result.push(right.shift())
+      }
+    }
+    
+    return [...result, ...left, ...right]
+    
+  }
+  //mergeSort(arr)
