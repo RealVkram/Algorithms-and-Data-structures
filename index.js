@@ -86,3 +86,25 @@ const mergeSort = ( nums ) => {
       return medianNumber
     }
   }
+
+//WORD COUNT ALGORITHM
+  const wordCount = (word) => {
+    let result = {}
+    
+    for (let items of word) {
+      result[items] === undefined ?
+        result[items] = 1 : result[items]++
+    }
+    return result  
+  }
+
+  //WORDlENGTH ALGORITHM
+  const wordLength = (word) => {
+    let result = {}
+    
+    for (let items of word) {
+      result[items] === undefined ?
+        result[items] = items.length : null
+    }
+    return result  
+  }
