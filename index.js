@@ -108,3 +108,25 @@ const mergeSort = ( nums ) => {
     }
     return result  
   }
+
+  //QUICK SORT
+  const quickSort = (array) => {
+    if (array.length <= 1) return array;
+    
+    let length = array.length
+    let pivot = array[length -  1]
+    
+    const leftArray = []
+    const rightArray = []
+    
+    for (let i = 0; i < length - 1; i++) {
+      if (array[i] < pivot) {
+        leftArray.push(array[i])
+      }
+      else {
+        rightArray.push(array[i])
+      }
+    }
+    return [...quickSort(leftArray), pivot, ...quickSort(rightArray)]
+  }
+  
