@@ -126,4 +126,19 @@ const mergeSort = ( nums ) => {
     return [...quickSort(left), pivot, ...quickSort(right) ]
   }
   
+
+  //INSERT SORT IN A DECREASING ORDER
+
+  function insertSort(num) {
+    for (let j = 1; j < num.length; j++) {
+      for (let i = 0; i < j; i++) {
+        if (num[j] > num[i]) {
+          let spliced = num.splice(j, 1)
+          num.splice(i, 0, spliced[0])
+        }
+      }
+      
+    }
+    return num
+   }
   
