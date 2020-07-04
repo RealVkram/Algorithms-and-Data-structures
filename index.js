@@ -161,3 +161,28 @@ const mergeSort = ( nums ) => {
     
     return sortedArray
   }
+
+
+  //ALGORITHM TO DETERMINE LARGEST DIVISIBLE NUMBER
+const largeNumber = (x, y) => {
+  
+  
+  while (x % y !== 0)  {
+     let r =  x - ( y * Math.floor(x / y) )
+      x = y, y = r;
+     if (x % y === 0) console.log(y)    
+   }
+ } 
+
+const divisibleNumber = (m, n) => {  
+  
+  if (m < n) {
+    [m, n] = [n, m]
+   largeNumber(m, n)
+  } 
+  else {
+    largeNumber(m, n)
+  }
+}
+divisibleNumber(544, 119)
+
