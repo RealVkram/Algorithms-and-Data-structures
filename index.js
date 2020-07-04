@@ -154,3 +154,10 @@ const mergeSort = ( nums ) => {
     }
    return backwardStr.join('')
   }
+
+  const mergeSorted = (arr1, arr2) => {
+    const mergedArray = [...arr1, ...arr2]
+    const sortedArray = mergedArray.sort((item1, item2) => item1 - item2)
+    
+    return sortedArray
+  }
