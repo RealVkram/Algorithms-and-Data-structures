@@ -142,3 +142,15 @@ const mergeSort = ( nums ) => {
     return num
    }
   
+//REVERSE STRING
+   const reverseStr = str => {
+    if (!str || str.length < 2 || typeof str !== 'string') return 'I was expecting string'
+    
+    let backwardStr = []
+    let length = str.length - 1
+    
+    for (let i = length; i >= 0; i--) {
+       backwardStr.push(str[i])
+    }
+   return backwardStr.join('')
+  }
